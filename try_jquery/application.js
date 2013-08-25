@@ -8,6 +8,25 @@
     });
   });
 
+  $(function() {
+    var initialize, logging, mouseevents;
+    $('#log').draggable();
+    logging = function(content) {
+      return $('#log').append(content);
+    };
+    initialize = function(insert) {
+      var row;
+      row = $("<tr><td>" + insert + "</td><td class='" + insert + "'></td></tr>");
+      row.appendTo('#box1 table');
+      return $('#area').on(insert, function() {
+        $('#box1').find("td").removeClass('green');
+        return $('#box1').find("." + insert).addClass('green');
+      });
+    };
+    mouseevents = ['click', 'dblclick', 'focusin', 'focusout', 'mousedown', 'mouseup', 'mousemove', 'mouseout', 'mouseover', 'mouseleave', 'mouseenter'];
+    return mouseevents.forEach(initialize);
+  });
+
 }).call(this);
 
 /*

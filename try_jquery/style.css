@@ -1,2 +1,20 @@
 body {
   background: white; }
+
+#log {
+  right: 200px;
+  max-height: 200px;
+  width: 200px;
+  background: lightgrey;
+  overflow: scroll; }
+
+#area {
+  background: lightcoral;
+  max-height: 50px;
+  max-width: 200px; }
+
+.green {
+  background: green; }
+
+#box1 > table {
+  width: 400px; }
