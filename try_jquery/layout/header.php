@@ -11,14 +11,11 @@
 <body>
 <nav class='navbar navbar-default'>
     <ul class='nav navbar-nav'>
-        <li class='active'>
-            <a href='#'>Something</a>
+        <li>
+            <a href='./index.php'>Home Page</a>
         </li>
         <li>
-            <a href='#'>Second page</a>
-        </li>
-        <li>
-            <a>Third page 4</a>
+            <a href='secondpage.php'>Second page</a>
         </li>
     </ul>
 </nav>

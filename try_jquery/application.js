@@ -27,6 +27,29 @@
     return mouseevents.forEach(initialize);
   });
 
+  $(function() {
+    return $('.confirmation').on('click', 'button', function() {
+      return $.ajax('forajax/confirmation.php', {
+        success: function(response) {
+          return $('.ticket').html(response).slideDown();
+        },
+        data: {
+          'confNum': $('.ticket').data('confirm')
+        },
+        error: function(request, errorType, errorMessage) {
+          return alert('Request: ' + request + ', Error: ' + errorType + ', Message: ' + errorMessage);
+        },
+        timeout: 3000,
+        beforeSend: function() {
+          return $('.confirmation').addClass('is-loading');
+        },
+        complete: function() {
+          return $('.confirmation').removeClass('is-loading');
+        }
+      });
+    });
+  });
+
 }).call(this);
 
 /*

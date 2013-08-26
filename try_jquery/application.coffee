@@ -20,4 +20,16 @@ $ ->
   mouseevents = ['click', 'dblclick', 'focusin', 'focusout', 'mousedown', 'mouseup', 'mousemove', 'mouseout', 'mouseover', 'mouseleave', 'mouseenter']
   mouseevents.forEach(initialize)
 
-
+$ ->
+  $('.confirmation').on 'click', 'button', ->
+    $.ajax 'forajax/confirmation.php',
+      success: (response) ->
+        $('.ticket').html(response).slideDown()
+      data: 'confNum': $('.ticket').data('confirm')
+      error: (request, errorType, errorMessage) ->
+        alert 'Request: ' + request + ', Error: ' + errorType + ', Message: ' + errorMessage
+      timeout: 3000
+      beforeSend: ->
+        $('.confirmation').addClass('is-loading')
+      complete: ->
+        $('.confirmation').removeClass('is-loading')
