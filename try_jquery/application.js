@@ -34,7 +34,7 @@
       return $('.confirmation').on('click', 'button', this.loadConfirmation);
     },
     loadConfirmation: function() {
-      return $.ajax('forajax/confirmation.php', {
+      return $.ajax('forajax/confirmation.php.html', {
         success: function(response) {
           return $('.ticket').html(response).slideDown();
         },

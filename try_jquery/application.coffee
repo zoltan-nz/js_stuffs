@@ -24,7 +24,7 @@ confirmation =
   init: ->
     $('.confirmation').on 'click', 'button', @.loadConfirmation
   loadConfirmation: ->
-    $.ajax 'forajax/confirmation.php',
+    $.ajax 'forajax/confirmation.php.html',
       success: (response) ->
         $('.ticket').html(response).slideDown()
       data: 'confNum': $('.ticket').data('confirm')
