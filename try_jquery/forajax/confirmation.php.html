@@ -1,4 +1,9 @@
-<? sleep(1); ?>
-<div>
-  <strong><? echo "Something from php"; ?></strong>
-</div>
+<?
+  sleep(1);
+
+  $json_content = [
+    "level1" => ["conten1", "content2"],
+    "level2" => ["content3", "content4"]
+  ];
+
+  echo json_encode($json_content);
