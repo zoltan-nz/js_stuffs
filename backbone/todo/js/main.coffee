@@ -1,0 +1,3 @@
+$ ->
+
+    Todo = Backbone.Model.extend
