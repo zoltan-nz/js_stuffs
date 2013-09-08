@@ -1,3 +1,7 @@
 $ ->
 
-    Todo = Backbone.Model.extend
+    Todo = Backbone.Model.extend()
+    todoItem = new Todo()
+
+        
+    

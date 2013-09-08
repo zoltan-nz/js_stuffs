@@ -1,9 +1,7 @@
 body {
   background: white;
-  font-size: 12px; }
-
-.col-sm-4 {
-  background: rgba(86, 61, 124, 0.15); }
+  font-size: 12px;
+  font-family: Tahoma; }
 
 .is-loading {
   background: red; }
