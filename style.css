@@ -1,0 +1,12 @@
+html {
+	overflow: auto;
+	background: gray;
+	font-family: Tahoma;
+}
+
+body {
+	color: white;
+	border: solid 1px;
+	background: black;
+	height: 20px;
+}
