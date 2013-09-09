@@ -1,0 +1,25 @@
+<%= form_for(@backoffice_task) do |f| %>
+  <% if @backoffice_task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@backoffice_task.errors.count, "error") %> prohibited this backoffice_task from being saved:</h2>
+
+      <ul>
+      <% @backoffice_task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :done %><br>
+    <%= f.check_box :done %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

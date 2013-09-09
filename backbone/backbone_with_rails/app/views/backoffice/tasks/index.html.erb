@@ -1,0 +1,39 @@
+<h1>Listing backoffice_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Done</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backoffice_tasks.each do |backoffice_task| %>
+      <tr>
+        <td><%= backoffice_task.description %></td>
+        <td><%= backoffice_task.done %></td>
+        <td><%= link_to 'Show', backoffice_task %></td>
+        <td><%= link_to 'Edit', edit_backoffice_task_path(backoffice_task) %></td>
+        <td><%= link_to 'Destroy', backoffice_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_backoffice_task_path %>
+
+<div id="backbone">
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    App.initialize();
+  });
+</script>

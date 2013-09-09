@@ -1,5 +1,10 @@
 BackboneWithRails::Application.routes.draw do
-  get "home/index"
+  namespace :backoffice do
+    resources :tasks
+  end
+
+  root "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

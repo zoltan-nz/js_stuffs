@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @backoffice_task.description %>
+</p>
+
+<p>
+  <strong>Done:</strong>
+  <%= @backoffice_task.done %>
+</p>
+
+<%= link_to 'Edit', edit_backoffice_task_path(@backoffice_task) %> |
+<%= link_to 'Back', backoffice_tasks_path %>
