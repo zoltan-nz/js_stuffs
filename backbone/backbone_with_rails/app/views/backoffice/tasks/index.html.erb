@@ -32,7 +32,13 @@
 
 </div>
 
-<script>
+<script type="text/template" id="app-template">
+  <h1>Todo List</h1>
+  {{ entries }}
+</script>
+
+
+<script type="application/javascript">
   $(document).ready(function(){
     App.initialize();
   });

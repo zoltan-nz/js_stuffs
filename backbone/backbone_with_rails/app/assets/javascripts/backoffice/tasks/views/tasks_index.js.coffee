@@ -1,9 +1,10 @@
-class App.Views.TasksIndex extends Backbone.View
+$ ->
+  class App.Views.TasksIndex extends Backbone.View
 
-  template: JST['index']
+    template: (params) -> Mustache.to_html($('#app-template').html(), params)
 
-  render: ->
-    console.log 'Rendering index...'
-    @$el.html(@template)
-    @
+    render: ->
+      console.log 'Rendering index...'
+      @$el.html(@template(entries: 'Entries goes here...'))
+      @
 
