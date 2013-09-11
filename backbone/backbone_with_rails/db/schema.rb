@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909143539) do
+ActiveRecord::Schema.define(version: 20130911231950) do
 
   create_table "backoffice_tasks", force: true do |t|
     t.string   "description"
     t.boolean  "done"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "correspondence"
+    t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

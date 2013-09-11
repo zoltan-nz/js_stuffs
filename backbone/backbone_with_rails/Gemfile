@@ -45,3 +45,5 @@ gem 'backbone-on-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'forgery'

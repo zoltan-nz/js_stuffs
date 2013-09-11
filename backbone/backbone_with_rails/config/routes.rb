@@ -1,4 +1,6 @@
 BackboneWithRails::Application.routes.draw do
+  resources :customers
+
   namespace :backoffice do
     resources :tasks
   end
