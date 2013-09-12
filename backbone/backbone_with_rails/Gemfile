@@ -47,3 +47,9 @@ gem 'backbone-on-rails'
 # gem 'debugger', group: [:development, :test]
 
 gem 'forgery'
+
+gem 'slim'
+gem 'puma'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+
