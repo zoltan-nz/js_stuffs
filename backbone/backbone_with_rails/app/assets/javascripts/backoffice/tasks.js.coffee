@@ -4,5 +4,5 @@ window.App =
   Views: {}
   Routers: {}
   initialize: ->
-    new App.Routers.Tasks
+    new App.Routers.Tasks()
     Backbone.history.start()
