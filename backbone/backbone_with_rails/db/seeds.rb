@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+1000.times do
+  Customer.create!(name: Forgery(:name).full_name, email: Forgery(:internet).email_address, correspondence: [true, false].sample, note: Forgery::LoremIpsum.sentences(3, random: true))
+end

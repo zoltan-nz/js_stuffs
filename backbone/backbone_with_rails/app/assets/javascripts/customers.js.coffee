@@ -3,6 +3,10 @@ window.BackboneWithRails =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: ->
+  init: ->
     new BackboneWithRails.Routers.Customers()
     Backbone.history.start()
+
+$ ->
+  if $('body').data('controller') == 'customers'
+    BackboneWithRails.init()
