@@ -53,3 +53,8 @@ gem 'puma'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 
+group :developer do
+  gem 'better_errors'
+  
+end
+
