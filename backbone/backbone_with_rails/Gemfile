@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'backbone-on-rails'
+#gem 'backbone-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
