@@ -17,38 +17,22 @@
     =outlet
 </script>
 
-<!--<script type="text/x-emblem" id="home">-->
-  <!--.nav-->
-    <!--ul-->
-      <!--li-->
-        <!--linkTo 'index' | Home-->
-      <!--li-->
-        <!--linkTo 'about' | About-->
-  <!--=outlet-->
-<!--</script>-->
-
 <script type="text/x-emblem" id="about">
   h1 This is About page
 </script>
 
-<script type="text/x-handlebars" id="posts">
-  <table>
-  <thead>
-  <tr>
-    <th>Recent Posts</th>
-  </tr>
-  </thead>
-  {{#each}}
-  <tr>
-    <td>
-    {{#link-to 'post' this}}
-      {{title}} <small>by {{author.name}}</small>
-    {{/link-to}}
-    </td>
-  </tr>
-  {{/each}}
-</table>
-{{outlet}}
+<script type="text/x-emblem" id="posts">
+  table
+    thead
+      tr
+        th Recent Posts
+    each
+      tr
+        td
+          = link-to 'post' this
+            = title
+            small by #{author.name}
+  = outlet
 </script>
 
 <script type="text/x-handlebars" id="post">
