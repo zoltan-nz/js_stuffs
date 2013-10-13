@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/szines/slim.git
+  revision: 583faccdb1d398a3e883de300bfa6517df23b8c3
+  specs:
+    slim (2.0.1)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -76,9 +84,6 @@ GEM
       ffi (>= 0.5.0)
     ruby18_source_location (0.2)
     sass (3.2.12)
-    slim (2.0.1)
-      temple (~> 0.6.6)
-      tilt (>= 1.3.3, < 2.1)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -102,8 +107,8 @@ PLATFORMS
 DEPENDENCIES
   coffee-script
   middleman (~> 3.1.5)
-  middleman-livereload (~> 3.1.0)
+  middleman-livereload
   ruby18_source_location
   sass
-  slim
+  slim!
   wdm (~> 0.1.0)

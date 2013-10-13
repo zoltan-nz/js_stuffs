@@ -1,0 +1,74 @@
+<h1>Emblem JS test 1</h1>
+
+<!--<script type="text/x-handlebars">-->
+    <!--<ul>-->
+        <!--<li>{{#link-to 'posts'}}Posts{{/link-to}}</li>-->
+        <!--<li>{{#link-to 'about'}}About{{/link-to}}</li>-->
+    <!--</ul>-->
+
+
+    <!--{{outlet}}-->
+<!--</script>-->
+
+<script type="text/x-emblem">
+    ul
+      li = linkTo 'posts' | Posts
+      li = linkTo 'about' | About
+    =outlet
+</script>
+
+<!--<script type="text/x-emblem" id="home">-->
+  <!--.nav-->
+    <!--ul-->
+      <!--li-->
+        <!--linkTo 'index' | Home-->
+      <!--li-->
+        <!--linkTo 'about' | About-->
+  <!--=outlet-->
+<!--</script>-->
+
+<script type="text/x-emblem" id="about">
+  h1 This is About page
+</script>
+
+<script type="text/x-handlebars" id="posts">
+  <table>
+  <thead>
+  <tr>
+    <th>Recent Posts</th>
+  </tr>
+  </thead>
+  {{#each}}
+  <tr>
+    <td>
+    {{#link-to 'post' this}}
+      {{title}} <small>by {{author.name}}</small>
+    {{/link-to}}
+    </td>
+  </tr>
+  {{/each}}
+</table>
+{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="post">
+  {{#if isEditing}}
+    {{partial 'post/edit'}}
+    <button {{action 'doneEditing'}}>Done</button>
+  {{else}}
+    <button {{action 'edit'}}>Edit</button>
+  {{/if}}
+
+  <h1>{{title}}</h1>
+  <hr>
+  <p>{{excerpt}}</p>
+</script>
+
+<script type="text/x-handlebars" id="post/edit">
+    <p>{{input type="text" value=title}}</p>
+            <p>{{input type="text" value=excerpt}}</p>
+            <p>{{textarea value=body}}</p>
+
+</script>
+
+
