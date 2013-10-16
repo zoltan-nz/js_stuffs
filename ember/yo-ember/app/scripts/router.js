@@ -1,0 +1,3 @@
+YoEmber.Router.map(function () {
+  
+});
