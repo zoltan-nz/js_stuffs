@@ -3,19 +3,22 @@
 #######################################
 
 window.Todos = Em.Application.create
-  rootElement: '#app'
+  LOG_TRANSITIONS: true
+  LOG_TRANSITIONS_INTERNAL: true
   ready: ->
     @set 'Router.enableLogging', true
 
-
 #######################################
-#  VIEW
+#  ROUTERS
 #######################################
 
-#view = Em.View.create
-#  templateName: 'todos.handlebars.js'
-#
-#view.append()
+Todos.Router.map ->
+  @resource 'todos', {path: '/'}
+
+Todos.TodosRoute = Em.Route.extend
+  model: ->
+    @store.find('todo')
+
 
 #######################################
 #  MODELS
@@ -26,18 +29,6 @@ Todos.ApplicationAdapter = DS.FixtureAdapter.extend()
 Todos.Todo = DS.Model.extend
   title: DS.attr 'string'
   isCompleted: DS.attr 'boolean'
-
-
-#######################################
-#  ROUTERS
-#######################################
-
-Todos.Router.map ->
-  @resource 'todos', path: '/'
-
-Todos.TodosRoute = Em.Route.extend
-  model: ->
-    @store.find('todo')
 
 
 #######################################
