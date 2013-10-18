@@ -1,0 +1,5 @@
+h1 Application Template
+ul
+  li = linkTo 'posts' | Posts
+  li = linkTo 'about' | About
+=outlet

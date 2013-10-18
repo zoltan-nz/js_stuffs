@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'middleman'
+gem 'middleman', '~> 3.1.6'
 gem 'middleman-livereload'
 
 gem 'slim'
 gem 'sass'
 gem 'coffee-script'
-gem 'middleman-ember'
+gem 'middleman-ember', github: "nerdyworm/middleman-ember"
+gem 'middleman-emblem'
 gem 'handlebars_assets', require: false
