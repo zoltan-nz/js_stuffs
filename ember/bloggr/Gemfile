@@ -6,6 +6,7 @@ gem 'middleman-livereload'
 gem 'slim'
 gem 'sass'
 gem 'coffee-script'
+gem 'handlebars_assets', require: false
 gem 'middleman-ember', github: "nerdyworm/middleman-ember"
 gem 'middleman-emblem'
-gem 'handlebars_assets', require: false
+gem 'middleman-emberscript'

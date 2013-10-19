@@ -1,4 +1,11 @@
-App = Ember.Application.create()
+#= require_self
+#= require_tree ./templates
+
+App = Ember.Application.create
+  rootElement : "#ember-application-root"
+
+App.ApplicationView = Ember.View.extend
+  templateName: 'application'
 
 App.Router.map ->
   @resource 'about'
@@ -12,6 +19,9 @@ App.PostsRoute = Ember.Route.extend
 App.PostRoute = Ember.Route.extend
   model: (params) ->
     posts.findBy 'id', params.post_id
+
+
+
 
 App.PostController = Ember.ObjectController.extend
   isEditing: false

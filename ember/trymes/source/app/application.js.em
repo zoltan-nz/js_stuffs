@@ -2,7 +2,7 @@
 #= require "jquery"
 #= require "utils"
 #= require "handlebars"
-#= require "ember"
+#= require "ember-1.0.0"
 #= require "ember-data"
 #= require "underscore"
 #= require "bootstrap-modalmanager"

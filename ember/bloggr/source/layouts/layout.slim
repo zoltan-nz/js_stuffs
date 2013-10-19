@@ -5,8 +5,8 @@ html
 
     title= current_page.data.title || "The Middleman"
 
-    = stylesheet_link_tag "normalize", 'bootstrap.min', 'bootstrap-theme.min', "custom"
-    = javascript_include_tag  "all"
-    = javascript_include_tag 'app'
+    = stylesheet_link_tag     'bloggr'
+    = javascript_include_tag  'application'
+    = javascript_include_tag  'bloggr'
   body class="#{page_classes}"
     = yield

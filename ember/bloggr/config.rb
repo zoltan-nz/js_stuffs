@@ -6,8 +6,14 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-activate :ember
-activate :emblem, emblem_dir: "templates", emblem_ext: "emblem", ignore: true
+sprockets.append_path "libs/javascripts"
+sprockets.append_path "libs/stylesheets"
+sprockets.append_path "libs/fonts"
+sprockets.append_path "libs/images"
+
+activate :emblem
+activate :emberscript
+
 
 configure :build do
   activate :minify_css
