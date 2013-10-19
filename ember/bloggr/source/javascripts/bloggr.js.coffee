@@ -11,8 +11,8 @@ App.Router.map ->
   @resource 'posts', ->
     @resource 'post', path: ':post_id'
 
-App.AboutRoute = Ember.Route.extend
-  templateName: 'about2'
+#App.AboutRoute = Ember.Route.extend
+#  templateName: 'about'
 
 App.PostsRoute = Ember.Route.extend
   model: ->
