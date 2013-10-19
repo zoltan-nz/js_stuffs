@@ -1,5 +1,4 @@
 #= require_self
-#= require_tree ./templates
 
 App = Ember.Application.create
   rootElement : "#ember-application-root"

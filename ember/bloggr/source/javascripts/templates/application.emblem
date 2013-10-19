@@ -1,5 +1,2 @@
-h1 Application Template
-ul
-  li = linkTo 'posts' | Posts
-  li = linkTo 'about' | About
-=outlet
+h1 Welcome to Bloggr
+= outlet
