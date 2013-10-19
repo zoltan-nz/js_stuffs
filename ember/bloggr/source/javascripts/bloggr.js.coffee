@@ -3,9 +3,13 @@
 
 App = Ember.Application.create
   rootElement : "#ember-application-root"
+  LOG_TRANSITIONS: true
+  LOG_TRANSITIONS_INTERNAL: true
+  ready: ->
+    @set 'Router.enableLogging', true
 
-App.ApplicationView = Ember.View.extend
-  templateName: 'application'
+#App.ApplicationView = Ember.View.extend
+#  templateName: 'application'
 
 App.Router.map ->
   @resource 'about'
@@ -21,7 +25,7 @@ App.PostRoute = Ember.Route.extend
     posts.findBy 'id', params.post_id
 
 
-
+App.ApplicationController = Em.ArrayController.extend()
 
 App.PostController = Ember.ObjectController.extend
   isEditing: false

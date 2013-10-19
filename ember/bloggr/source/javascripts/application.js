@@ -4,3 +4,4 @@
 //= require ember-1.0.0.js
 //= require ember-data.js
 //= require bootstrap.min.js
+//= require bloggr
