@@ -1,2 +1,18 @@
-h1 Welcome to Bloggr
-= outlet
+.navbar.navbar-default
+  .navbar-header
+    button.navbar-toggle data-toggle='collapse' data-target='.navbar-ex1-collapse' type='button'
+      .icon-bar
+      .icon-bar
+      .icon-bar
+    a.navbar-brand href='#' Bloggr
+
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    ul.nav.navbar-nav
+      li.active
+        =linkTo 'posts' | Posts
+      li
+        =linkTo 'about' | About
+
+
+.container
+  = outlet

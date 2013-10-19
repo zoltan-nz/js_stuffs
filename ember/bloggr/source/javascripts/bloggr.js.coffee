@@ -1,19 +1,18 @@
 #= require_self
 
 App = Ember.Application.create
-  rootElement : "#ember-application-root"
   LOG_TRANSITIONS: true
   LOG_TRANSITIONS_INTERNAL: true
   ready: ->
     @set 'Router.enableLogging', true
 
-#App.ApplicationView = Ember.View.extend
-#  templateName: 'application'
-
 App.Router.map ->
   @resource 'about'
   @resource 'posts', ->
     @resource 'post', path: ':post_id'
+
+App.AboutRoute = Ember.Route.extend
+  templateName: 'about2'
 
 App.PostsRoute = Ember.Route.extend
   model: ->
@@ -22,9 +21,6 @@ App.PostsRoute = Ember.Route.extend
 App.PostRoute = Ember.Route.extend
   model: (params) ->
     posts.findBy 'id', params.post_id
-
-
-App.ApplicationController = Em.ArrayController.extend()
 
 App.PostController = Ember.ObjectController.extend
   isEditing: false

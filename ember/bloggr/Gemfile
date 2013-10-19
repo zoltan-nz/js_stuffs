@@ -9,7 +9,7 @@ gem 'middleman-slim'
 gem 'slim'
 
 # Emblem on the client
-gem 'middleman-emblem'
+gem 'middleman-emblem', github: 'szines/middleman-emblem'
 gem 'emblem-source'
 
 # Assets

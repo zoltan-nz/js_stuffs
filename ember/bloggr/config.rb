@@ -1,4 +1,6 @@
+# Livereload
 activate :livereload
+config[:file_watcher_ignore] += [ /.idea\// ]
 
 #Ember
 activate :ember
@@ -12,6 +14,8 @@ sprockets.append_path "libs/javascripts"
 #sprockets.append_path "libs/stylesheets"
 #sprockets.append_path "libs/fonts"
 #sprockets.append_path "libs/images"
+
+
 
 configure :build do
   activate :minify_css
