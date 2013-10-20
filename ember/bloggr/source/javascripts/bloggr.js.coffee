@@ -11,9 +11,6 @@ App.Router.map ->
   @resource 'posts', ->
     @resource 'post', path: ':post_id'
 
-#App.AboutRoute = Ember.Route.extend
-#  templateName: 'about'
-
 App.PostsRoute = Ember.Route.extend
   model: ->
     posts
@@ -32,20 +29,26 @@ App.PostController = Ember.ObjectController.extend
     doneEditing: ->
       @set 'isEditing', false
 
+Ember.Handlebars.helper 'format-date', (date) ->
+  moment(date).fromNow()
 
+showdown = new Showdown.converter()
+
+Ember.Handlebars.helper 'format-markdown', (input) ->
+  new Handlebars.SafeString(showdown.makeHtml(input))
 
 posts = [{
   id: '1'
-  title: 'Title 1'
-  author: {name: 'akarki'}
+  title: 'This is my First Article'
+  author: {name: 'Zoltan'}
   date: new Date('12-12-2013')
-  excerpt: 'Excerpt'
-  body: 'body text'
+  excerpt: 'About learning Ember JS.'
+  body: 'A long long article body text comes here in my first article on this website. What an amazing tool. :)'
 },{
   id: '2'
-  title: 'Title 2'
-  author: {name: 'akarki'}
+  title: 'Second Article should have different Title'
+  author: {name: 'Niki'}
   date: new Date('12-12-2013')
-  excerpt: 'Excerpt'
-  body: 'body text'
+  excerpt: 'We have a guest blogger today.'
+  body: 'Someone else coude write your blogpost without problem. Well done.'
 }]

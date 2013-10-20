@@ -1,1 +1,13 @@
-h1 Posts from posts.emblem
+.row
+  .col-md-3
+    table.table
+      thead: tr: th: h4: | Recent Posts
+      each
+        tr: td
+          = linkTo 'post' this
+            = title
+            small.muted  by {{author.name}}
+
+
+  .col-md-9
+    = outlet

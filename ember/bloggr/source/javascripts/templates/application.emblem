@@ -8,10 +8,8 @@
 
   .collapse.navbar-collapse.navbar-ex1-collapse
     ul.nav.navbar-nav
-      li.active
-        =linkTo 'posts' | Posts
-      li
-        =linkTo 'about' | About
+      li=linkTo 'posts' | Posts
+      li=linkTo 'about' | About
 
 
 .container
