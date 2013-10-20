@@ -13,7 +13,8 @@ App.Router.map ->
 
 App.PostsRoute = Ember.Route.extend
   model: ->
-    posts
+    $.getJSON('http://localhost:3000/posts').then (data) ->
+      data
 
 App.PostRoute = Ember.Route.extend
   model: (params) ->
