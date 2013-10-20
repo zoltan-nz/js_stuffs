@@ -6,11 +6,15 @@ class PostsController < ApplicationController
     render json: Post.all
   end
 
+  def show
+    render json: Post.find(params[:id])
+  end
+
   private
 
   def default_serializer_options
   {
-      root: false
+      root: 'post'
   }
   end
 end

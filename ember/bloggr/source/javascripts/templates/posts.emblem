@@ -6,8 +6,8 @@
         tr: td
           = linkTo 'post' this
             = title
+            /= debugger
             small.muted  by {{author.name}}
-
 
   .col-md-9
     = outlet

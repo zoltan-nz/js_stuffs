@@ -5,6 +5,6 @@ html lang='en'
     title= current_page.data.title || "Bloggr"
 
     = stylesheet_link_tag     'bloggr'
-    = javascript_include_tag  'application'
+    = javascript_include_tag  'application', 'bloggr'
   body class="#{page_classes}"
     = yield

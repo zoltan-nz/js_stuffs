@@ -1,10 +1,44 @@
 #= require_self
 
-App = Ember.Application.create
-  LOG_TRANSITIONS: true
+window.App = Ember.Application.create
   LOG_TRANSITIONS_INTERNAL: true
+  LOG_BINDINGS: true
+  LOG_ACTIVE_GENERATION: true
+  LOG_VIEW_LOOKUPS: true
+  ENV.RAISE_ON_DEPRECATION = true
+  LOG_STACKTRACE_ON_DEPRECATION: true
+  LOG_VERSION: true
+
+  debugMode: true
   ready: ->
     @set 'Router.enableLogging', true
+
+###
+# Database and Models
+###
+App.ApplicationAdapter = DS.RESTAdapter.extend
+  host: 'http://localhost:3000'
+
+App.Store = DS.Store.extend()
+
+#attr = DS.attr
+#belongsTo = DS.belongsTo
+#hasMany = DS.hasMany
+
+App.Post = DS.Model.extend
+  title: DS.attr()
+  excerpt: DS.attr()
+  body: DS.attr()
+  date: DS.attr()
+  author: DS.belongsTo 'author', inverse: 'posts'
+#
+App.Author = DS.Model.extend
+  posts: DS.hasMany 'post', inverse: 'author'
+  name: DS.attr('string')
+
+###
+# Routers
+###
 
 App.Router.map ->
   @resource 'about'
@@ -13,12 +47,15 @@ App.Router.map ->
 
 App.PostsRoute = Ember.Route.extend
   model: ->
-    $.getJSON('http://localhost:3000/posts').then (data) ->
-      data
+    store = @get('store')
+    store.findAll('post')
+
 
 App.PostRoute = Ember.Route.extend
   model: (params) ->
-    posts.findBy 'id', params.post_id
+    store = @get('store')
+    store.find('post', params.post_id)
+
 
 App.PostController = Ember.ObjectController.extend
   isEditing: false
@@ -37,19 +74,3 @@ showdown = new Showdown.converter()
 
 Ember.Handlebars.helper 'format-markdown', (input) ->
   new Handlebars.SafeString(showdown.makeHtml(input))
-
-posts = [{
-  id: '1'
-  title: 'This is my First Article'
-  author: {name: 'Zoltan'}
-  date: new Date('12-12-2013')
-  excerpt: 'About learning Ember JS.'
-  body: 'A long long article body text comes here in my first article on this website. What an amazing tool. :)'
-},{
-  id: '2'
-  title: 'Second Article should have different Title'
-  author: {name: 'Niki'}
-  date: new Date('12-12-2013')
-  excerpt: 'We have a guest blogger today.'
-  body: 'Someone else coude write your blogpost without problem. Well done.'
-}]
