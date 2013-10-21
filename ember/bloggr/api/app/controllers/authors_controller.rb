@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
 
   def default_serializer_options
     {
-        root: false
+        root: 'author'
     }
   end
 end
