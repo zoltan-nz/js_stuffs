@@ -30,11 +30,11 @@ App.Post = DS.Model.extend
   excerpt: DS.attr()
   body: DS.attr()
   date: DS.attr()
-  author: DS.belongsTo 'author', inverse: 'posts'
-#
+  author: DS.belongsTo 'author', inverse: 'posts', async: true
+
 App.Author = DS.Model.extend
   posts: DS.hasMany 'post', inverse: 'author'
-  name: DS.attr('string')
+  name: DS.attr 'string'
 
 ###
 # Routers
