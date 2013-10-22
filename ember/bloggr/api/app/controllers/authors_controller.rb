@@ -1,18 +1,13 @@
 class AuthorsController < ApplicationController
 
   def index
-    render json: Author.all
+    @authors = Author.all
+    render
   end
 
   def show
-    render json: Author.find(params[:id])
+    @author = Author.find(params[:id])
+    render
   end
 
-  private
-
-  def default_serializer_options
-    {
-        root: 'author'
-    }
-  end
 end

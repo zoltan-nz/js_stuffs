@@ -1,20 +1,17 @@
 class PostsController < ApplicationController
-
-
+  include ActionController::MimeResponds
+  include ActionController::Helpers
+  include ActionController::Cookies
 
   def index
-    render json: Post.all
+    @posts = Post.all
+    @authors = Author.all
+    render
   end
 
   def show
-    render json: Post.find(params[:id])
+    @post = Post.find(params[:id])
+    render
   end
 
-  private
-
-  def default_serializer_options
-  {
-      root: 'post'
-  }
-  end
 end

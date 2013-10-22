@@ -33,7 +33,7 @@ App.Post = DS.Model.extend
   author: DS.belongsTo 'author', async: true
 
 App.Author = DS.Model.extend
-#  posts: DS.hasMany 'post', inverse: 'author'
+  posts: DS.hasMany 'post', inverse: 'author'
   name: DS.attr 'string'
 
 ###
