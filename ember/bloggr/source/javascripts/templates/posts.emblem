@@ -10,4 +10,9 @@
             small.muted  by {{author.name}}
 
   .col-md-9
+    if isNew
+      partial 'posts/new'
+      button.btn.btn-success click='newPost' Add New Post
+    else
+      button.btn.btn-warning click='new' New
     = outlet

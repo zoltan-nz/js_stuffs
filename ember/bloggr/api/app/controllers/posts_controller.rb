@@ -3,6 +3,11 @@ class PostsController < ApplicationController
   include ActionController::Helpers
   include ActionController::Cookies
 
+  def create
+    @post = Post.new(params[:post])
+    @post.save!
+  end
+
   def index
     @posts = Post.all
     @authors = Author.all

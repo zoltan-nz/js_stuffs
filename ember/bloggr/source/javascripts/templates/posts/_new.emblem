@@ -1,0 +1,13 @@
+h1 Create a new article
+
+form
+  .form-group
+    label Title:
+    = input class='form-control' type='text' value=title
+  .form-group
+    label Excerpt:
+    = input class='form-control' type='text' value=excerpt
+  .form-group
+    label Body text:
+    = textarea class='form-control' value=body
+  button.btn.btn-success click='addNewPost' Add New Article

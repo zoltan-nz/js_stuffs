@@ -56,9 +56,25 @@ App.PostRoute = Ember.Route.extend
     store = @get('store')
     store.find('post', params.post_id)
 
+App.PostsController = Em.ArrayController.extend
+  isNew:      false
+
+  actions:
+    new: ->
+      @set 'isNew',     true
+    addNewPost: ->
+      newpost = @store.createRecord( 'post', {
+        title: @get('title')
+        excerpt: @get('excerpt')
+        body: @get('body')
+      })
+      newpost.save()
+
+
+
 
 App.PostController = Ember.ObjectController.extend
-  isEditing: false
+  isEditing:  false
 
   actions:
     edit: ->
@@ -66,6 +82,8 @@ App.PostController = Ember.ObjectController.extend
 
     doneEditing: ->
       @set 'isEditing', false
+
+
 
 Ember.Handlebars.helper 'format-date', (date) ->
   moment(date).fromNow()

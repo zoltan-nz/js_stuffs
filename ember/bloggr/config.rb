@@ -1,6 +1,7 @@
 # Livereload
 activate :livereload, host: '0.0.0.0'
 config[:file_watcher_ignore] += [ /.idea\// ]
+config[:file_watcher_ignore] += [ /api\// ]
 
 #Ember
 activate :ember
