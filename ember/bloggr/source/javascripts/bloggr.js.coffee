@@ -61,7 +61,10 @@ App.PostsController = Em.ArrayController.extend
 
   actions:
     new: ->
-      @set 'isNew',     true
+      @set 'isNew', true
+      @set 'title', ''
+      @set 'excerpt', ''
+      @set 'body', ''
     addNewPost: ->
       newpost = @store.createRecord( 'post', {
         title: @get('title')

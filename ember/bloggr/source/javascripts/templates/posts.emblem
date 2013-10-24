@@ -1,5 +1,6 @@
 .row
   .col-md-3
+    button.btn.btn-warning click='new' New
     table.table
       thead: tr: th: h4: | Recent Posts
       each
@@ -8,11 +9,8 @@
             = title
             /= debugger
             small.muted  by {{author.name}}
-
   .col-md-9
     if isNew
-      partial 'posts/new'
-      button.btn.btn-success click='newPost' Add New Post
+      partial 'post/new'
     else
-      button.btn.btn-warning click='new' New
-    = outlet
+      = outlet

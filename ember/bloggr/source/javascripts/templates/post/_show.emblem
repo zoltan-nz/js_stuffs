@@ -1,0 +1,12 @@
+h1 = title
+h2
+  | by {{author.name}}
+  small.muted  ({{format-date date}})
+
+hr
+
+.intro
+  = format-markdown excerpt
+
+.below-the-fold
+  = format-markdown body

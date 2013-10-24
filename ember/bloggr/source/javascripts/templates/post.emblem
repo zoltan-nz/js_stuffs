@@ -1,18 +1,11 @@
-if isEditing
-  partial 'post/edit'
-  button.btn.btn-success click='doneEditing' Done
-else
-  button.btn.btn-warning click='edit' Edit
+.row
+  if isEditing
+    .col-md-5
+      partial 'post/edit'
+      button.btn.btn-success click='doneEditing' Done
+  else
+    button.btn.btn-warning click='edit' Edit
 
-h1 = title
-h2
-  | by {{author.name}}
-  small.muted  ({{format-date date}})
+  div class=isEditing:col-md-4:nil
+    partial 'post/show'
 
-hr
-
-.intro
-  = format-markdown excerpt
-
-.below-the-fold
-  = format-markdown body

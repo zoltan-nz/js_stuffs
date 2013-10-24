@@ -10,3 +10,13 @@ Languages:
 - emblem
 - coffeescript
 - sass
+
+API:
+- rails api
+
+Frontend:
+- middleman
+
+Next step:
+- Creating one rails app
+
