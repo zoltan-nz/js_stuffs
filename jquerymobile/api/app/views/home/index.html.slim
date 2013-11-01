@@ -1,0 +1,9 @@
+ul data-role='listview' data-inset='true' data-filter='true'
+  -@cars.each do |c|
+   li=link_to c, '#'
+
+=form_tag do
+  =label_tag 'slider-0', 'Input slider:'
+  =range_field_tag 'slider', '25', {id: 'slider-0', min: '0', max: '100'}
+
+=link_to 'Star button', '#', data: {role: 'button', icon: 'star'}
