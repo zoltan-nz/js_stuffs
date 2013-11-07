@@ -5,19 +5,34 @@
     
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Cafe Vienna" %></title>
 
-    <!-- Insert jquery and jquery mobile from cdn-->
+    <!-- Insert jquery and jquery ui from cdn-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <!-- Insert jquery mobile from local-->
-    <%= javascript_include_tag 'jquery-mobile-1.4' %>
 
-    <%= stylesheet_link_tag 'jquery-mobile-1.4' %>
-    <%= javascript_include_tag  "all" %>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+    <%= javascript_include_tag  "underscore-v1.5.2" %>
+    <%= javascript_include_tag  "handlebars-v1.1.2" %>
+    <%= javascript_include_tag  "database" %>
+    <%= javascript_include_tag  "app" %>
+
+
+
+    <!-- Insert cafevienna customized theme file from themeroller -->
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"/>
+    <%= stylesheet_link_tag 'cafevienna' %>
+    <%= stylesheet_link_tag 'custom' %>
+
   </head>
   
   <body class="<%= page_classes %>">
