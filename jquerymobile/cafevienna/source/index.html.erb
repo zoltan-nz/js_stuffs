@@ -1,13 +1,39 @@
 <!-- HOME PAGE -->
 <div id="home" data-role="page" data-theme="a">
+
+  <!-- Panel in home page-->
+  <!-- In this panel you can turn on and off online database usage, status saved in cookie -->
+  <!-- See in database.js file -->
+
+  <div data-role="panel" id="options" data-display="push" data-position="right" data-theme="a">
+    <h3>Settings</h3>
+
+    <p>You can turn on and off online database connection.</p>
+
+    <p>If you change this settings, please click on OK button. Page will be reload.</p>
+
+    <form id="database_switcher" action="" method="" data-ajax="false">
+      <label for="database_flip">Database:</label>
+      <select name="database_flip" id="database_flip" data-role="slider">
+        <option value="off">Offline</option>
+        <option value="on">Online</option>
+      </select>
+      <button id='database_switcher_submit' data-ajax="false">Reload</button>
+    </form>
+
+    <p>Online database contains only 3 categories and all category and product name contain 'Online'</p>
+
+    <p>Online json file: <a href="http://www.zoltandebre.com/cafevienna/online_database.json">link</a></p>
+  </div>
+
   <div data-role="header">
     <h1>Cafe Vienna</h1>
-    <a href="#" class="ui-btn-right">Options</a>
+    <a href="#options" class="ui-btn-right" data-icon="gear">Options</a>
   </div>
 
   <div data-role="content">
     <div class="logo_wrapper">
-        <img class='logo' src="images/logo.png" alt=""/>
+      <img class='logo' src="images/logo.png" alt=""/>
     </div>
 
     <a href="#categories_page" data-role="button" data-transition="flip">Cafe Menu</a>
@@ -15,7 +41,10 @@
     <div data-role="collapsible-set">
       <div data-role="collapsible">
         <h3>Contact</h3>
-        <p>Address: Upper Drumcondra Road</br>Drumcondra, Dublin 9, Ireland</br>Phone: +353-12345-678</br>Open: Every day from 7am to 8pm</p>
+
+        <p>Address: Upper Drumcondra Road</br>Drumcondra, Dublin 9, Ireland</br>Phone: +353-12345-678</br>Open: Every
+          day from 7am to 8pm</p>
+
         <div class="logo_wrapper">
           <img src="images/contact.jpg" class="logo"/>
         </div>
@@ -23,7 +52,10 @@
 
       <div data-role="collapsible">
         <h3>About</h3>
-        <p>Cafe Vienna is a Family owned and operated German Restaurant, where each meal is made old fashioned way: From Scratch.</p>
+
+        <p>Cafe Vienna is a Family owned and operated German Restaurant, where each meal is made old fashioned way: From
+          Scratch.</p>
+
         <div class="logo_wrapper">
           <img src="images/about.jpg" class="logo"/>
         </div>
@@ -36,14 +68,39 @@
     <h4>&copy; 2013 Zoltan</h4>
   </div>
 
+
 </div>
 
 <!-- CATEGORIES -->
+
 <div id="categories_page" data-role="page" data-theme="a">
+
+  <div data-role="panel" id="options" data-display="push" data-position="right" data-theme="a">
+    <h3>Settings</h3>
+
+    <p>You can turn on and off online database connection.</p>
+
+    <p>If you change this settings, please click on OK button. Page will be reload.</p>
+
+    <form id="database_switcher" action="" method="" data-ajax="false">
+      <label for="database_flip">Database:</label>
+      <select name="database_flip" id="database_flip" data-role="slider">
+        <option value="off">Offline</option>
+        <option value="on">Online</option>
+      </select>
+      <button id='database_switcher_submit' data-ajax="false">Reload</button>
+    </form>
+
+    <p>Online database contains only 3 categories and all category and product name contain 'Online'</p>
+
+    <p>Online json file: <a href="http://www.zoltandebre.com/cafevienna/online_database.json">link</a></p>
+  </div>
+
   <div data-role="header">
     <a href="#home" data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
+
     <h1>Main Categories</h1>
-    <a href="#" class="ui-btn-right">Options</a>
+    <a href="#options" class="ui-btn-right" data-icon="gear">Options</a>
   </div>
 
   <div data-role="content">
@@ -59,30 +116,39 @@
 
 <!-- Handlebar Template for home page category list -->
 <!-- Each list item has a link to category_id, an image and name. -->
+
 <script id="category_list_item_template" type="text/x-handlebars-template">
 
-    {{#each categories}}
-        <li><a href="#category_{{id}}" data-transition="slide"><img src="{{image}}" class="ui-li-thumb"><h3 class="ui-li-heading">{{name}}</h3></a></li>
-    {{/each}}
+  {{#each categories}}
+  <li><a href="#category_{{id}}" data-transition="slide"><img src="{{image}}" class="ui-li-thumb">
+
+    <h3 class="ui-li-heading">{{name}}</h3></a></li>
+  {{/each}}
 
 </script>
 
 <!-- Nested lists for products. Products belongs to category-->
 <!-- Each category has own page -->
 <!-- On each page is a listview with list of connected products. -->
+
 <script id="product_list_template" type="text/x-handlebars-template">
 
   <div id="category_{{category.id}}" data-role="page">
     <div data-role="header">
       <a href="#home" data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
+
       <h1>{{category.name}}</h1>
     </div>
     <div data-role="content">
-    <ul id='category_{{id}}_products' data-role="listview" data-inset="true" data-filter="true" data-theme="a">
+      <ul id='category_{{id}}_products' data-role="listview" data-inset="true" data-filter="true" data-theme="a">
         {{#each products}}
-            <li><a href="#product_{{id}}" data-transition="slide"><img src="{{image}}" class="ui-li-thumb"><h3 class="ui-li-heading">{{name}}</h3><p class="ui-li-desc">{{price}}</p></a></li>
+        <li><a href="#product_{{id}}" data-transition="slide"><img src="{{image}}" class="ui-li-thumb">
+
+          <h3 class="ui-li-heading">{{name}}</h3>
+
+          <p class="ui-li-desc">{{price}}</p></a></li>
         {{/each}}
-    </ul>
+      </ul>
     </div>
     <div data-role="footer">
       <a class="ui-btn-left" data-transition="slide" data-rel="back" href="#" data-icon="back" data-role="button" data-inline="true">Back</a>
@@ -94,31 +160,32 @@
 <script id="product_details_template" type="text/x-handlebars-template">
 
   {{#each products}}
-      <div id="product_{{id}}" data-role="page">
-        <div data-role="header">
-          <a href="#home"  data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
-          <h1>{{name}}</h1>
+  <div id="product_{{id}}" data-role="page">
+    <div data-role="header">
+      <a href="#home" data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
+
+      <h1>{{name}}</h1>
+    </div>
+    <div class="middle" data-role="content">
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <img class="img-details" src="{{image}}">
         </div>
-        <div class="middle" data-role="content">
-          <div class="ui-grid-a">
-             <div class="ui-block-a">
-               <img class="img-details" src="{{image}}">
-             </div>
-            <div class="ui-block-b">
-              <p class="text-details">{{details}}</p>
-            </div>
-          </div>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"></div>
-            <div class="ui-block-b"></div>
-            <div class="ui-block-c"><h2>{{price}}</h2></div>
-          </div>
-        </div>
-        <div data-role="footer">
-          <a class="ui-btn-left" data-transition="slide" data-rel="back" href="#" data-icon="back" data-role="button" data-inline="true">Back</a>
-          <h4>&copy; 2013 Zoltan</h4>
+        <div class="ui-block-b">
+          <p class="text-details">{{details}}</p>
         </div>
       </div>
+      <div class="ui-grid-b">
+        <div class="ui-block-a"></div>
+        <div class="ui-block-b"></div>
+        <div class="ui-block-c"><h2>{{price}}</h2></div>
+      </div>
+    </div>
+    <div data-role="footer">
+      <a class="ui-btn-left" data-transition="slide" data-rel="back" href="#" data-icon="back" data-role="button" data-inline="true">Back</a>
+      <h4>&copy; 2013 Zoltan</h4>
+    </div>
+  </div>
   {{/each}}
 
 </script>
