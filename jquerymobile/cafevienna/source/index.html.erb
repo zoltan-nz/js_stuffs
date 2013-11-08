@@ -1,52 +1,124 @@
-<div data-role="page" data-theme="a">
+<!-- HOME PAGE -->
+<div id="home" data-role="page" data-theme="a">
   <div data-role="header">
     <h1>Cafe Vienna</h1>
+    <a href="#" class="ui-btn-right">Options</a>
   </div>
 
   <div data-role="content">
+    <div class="logo_wrapper">
+        <img class='logo' src="images/logo.png" alt=""/>
+    </div>
 
-    <a href="#" data-role='button' data-rel="dialog">Open dialog</a>
+    <a href="#categories_page" data-role="button" data-transition="flip">Cafe Menu</a>
 
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+        <h3>Contact</h3>
+        <p>Address: Upper Drumcondra Road</br>Drumcondra, Dublin 9, Ireland</br>Phone: +353-12345-678</br>Open: Every day from 7am to 8pm</p>
+        <div class="logo_wrapper">
+          <img src="images/contact.jpg" class="logo"/>
+        </div>
+      </div>
+
+      <div data-role="collapsible">
+        <h3>About</h3>
+        <p>Cafe Vienna is a Family owned and operated German Restaurant, where each meal is made old fashioned way: From Scratch.</p>
+        <div class="logo_wrapper">
+          <img src="images/about.jpg" class="logo"/>
+        </div>
+      </div>
+    </div>
 
   </div>
-
-  <div data-role="content" data-theme="a" data-theme="a">
-
-    <ul id='categories' data-role="listview" data-inset="true" data-filter="true" data-theme="a">
-
-    </ul>
-
-    <form>
-      <label for="slider-0">Input slider:</label>
-      <input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />
-    </form>
-
-    <a href="#second" data-role="button" data-icon="star">Star button</a>
-  </div>
-
 
   <div data-role="footer">
-    <h4>Footer</h4>
+    <h4>&copy; 2013 Zoltan</h4>
   </div>
+
 </div>
 
-<div id='second' data-role="page">
+<!-- CATEGORIES -->
+<div id="categories_page" data-role="page" data-theme="a">
   <div data-role="header">
-    <h1>Second Page</h1>
+    <a href="#home" data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
+    <h1>Main Categories</h1>
+    <a href="#" class="ui-btn-right">Options</a>
   </div>
 
   <div data-role="content">
-    <p>Hello world</p>
-    <a href="#" data-rel="dialog">Open dialog</a>
+    <ul id='categories' data-role="listview" data-inset="true" data-filter="true" data-theme="a">
+    </ul>
   </div>
 
   <div data-role="footer">
-    <p>Footer</p>
+    <a class="ui-btn-left" data-transition="flip" data-rel="back" href="#" data-icon="back" data-role="button" data-inline="true">Back</a>
+    <h4>&copy; 2013 Zoltan</h4>
   </div>
 </div>
 
-<script id="category_list" type="text/x-handlebars-template">
-  <div id="category_{{id}}" data-role="page">
-    <h1>Hello from template</h1>
+<!-- Handlebar Template for home page category list -->
+<!-- Each list item has a link to category_id, an image and name. -->
+<script id="category_list_item_template" type="text/x-handlebars-template">
+
+    {{#each categories}}
+        <li><a href="#category_{{id}}" data-transition="slide"><img src="{{image}}" class="ui-li-thumb"><h3 class="ui-li-heading">{{name}}</h3></a></li>
+    {{/each}}
+
+</script>
+
+<!-- Nested lists for products. Products belongs to category-->
+<!-- Each category has own page -->
+<!-- On each page is a listview with list of connected products. -->
+<script id="product_list_template" type="text/x-handlebars-template">
+
+  <div id="category_{{category.id}}" data-role="page">
+    <div data-role="header">
+      <a href="#home" data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
+      <h1>{{category.name}}</h1>
+    </div>
+    <div data-role="content">
+    <ul id='category_{{id}}_products' data-role="listview" data-inset="true" data-filter="true" data-theme="a">
+        {{#each products}}
+            <li><a href="#product_{{id}}" data-transition="slide"><img src="{{image}}" class="ui-li-thumb"><h3 class="ui-li-heading">{{name}}</h3><p class="ui-li-desc">{{price}}</p></a></li>
+        {{/each}}
+    </ul>
+    </div>
+    <div data-role="footer">
+      <a class="ui-btn-left" data-transition="slide" data-rel="back" href="#" data-icon="back" data-role="button" data-inline="true">Back</a>
+      <h4>&copy; 2013 Zoltan</h4>
+    </div>
   </div>
+</script>
+
+<script id="product_details_template" type="text/x-handlebars-template">
+
+  {{#each products}}
+      <div id="product_{{id}}" data-role="page">
+        <div data-role="header">
+          <a href="#home"  data-transition="slidedown" class="ui-btn-left" data-icon="home">Home</a>
+          <h1>{{name}}</h1>
+        </div>
+        <div class="middle" data-role="content">
+          <div class="ui-grid-a">
+             <div class="ui-block-a">
+               <img class="img-details" src="{{image}}">
+             </div>
+            <div class="ui-block-b">
+              <p class="text-details">{{details}}</p>
+            </div>
+          </div>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"></div>
+            <div class="ui-block-b"></div>
+            <div class="ui-block-c"><h2>{{price}}</h2></div>
+          </div>
+        </div>
+        <div data-role="footer">
+          <a class="ui-btn-left" data-transition="slide" data-rel="back" href="#" data-icon="back" data-role="button" data-inline="true">Back</a>
+          <h4>&copy; 2013 Zoltan</h4>
+        </div>
+      </div>
+  {{/each}}
+
 </script>

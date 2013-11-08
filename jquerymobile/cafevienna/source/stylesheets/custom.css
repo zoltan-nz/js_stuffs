@@ -1,0 +1,20 @@
+.logo_wrapper {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.logo {
+    width: 100%;
+}
+
+.img-details {
+    width: 100%;
+    margin-right: 10px;
+    max-width: 200px;
+}
+
+.text-details {
+    margin-left: 10px;
+}
