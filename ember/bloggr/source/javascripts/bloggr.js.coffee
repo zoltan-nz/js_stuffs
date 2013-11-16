@@ -1,17 +1,17 @@
 #= require_self
 
 window.App = Ember.Application.create
-  LOG_TRANSITIONS_INTERNAL: true
-  LOG_BINDINGS: true
-  LOG_ACTIVE_GENERATION: true
-  LOG_VIEW_LOOKUPS: true
-  ENV.RAISE_ON_DEPRECATION = true
-  LOG_STACKTRACE_ON_DEPRECATION: true
-  LOG_VERSION: true
-
-  debugMode: true
+  LOG_TRANSITIONS_INTERNAL: true,
+  LOG_BINDINGS: true,
+  LOG_ACTIVE_GENERATION: true,
+  LOG_VIEW_LOOKUPS: true,
+  RAISE_ON_DEPRECATION: true,
+  LOG_STACKTRACE_ON_DEPRECATION: true,
+  LOG_VERSION: true,
+  debugMode: true,
   ready: ->
     @set 'Router.enableLogging', true
+
 
 ###
 # Database and Models

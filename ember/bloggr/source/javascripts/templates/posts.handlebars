@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-warning" {{action 'new'}}>New</button>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    <h4>Recent Post</h4>
+                </th>
+            </tr>
+            </thead>
+            {{#each}}
+                <tr>
+                    <td>
+                        {{#link-to 'post' this}}{{title}}{{/link-to}}
+                        <small class="muted">by {{author.name}}</small>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div class="col-md-9">
+        {{#if isNew}}
+            {{partial 'post/new'}}
+        {{else}}
+            {{outlet}}
+        {{/if}}
+    </div>
+</div>
+

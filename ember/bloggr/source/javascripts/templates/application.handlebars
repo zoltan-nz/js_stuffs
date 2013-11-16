@@ -1,0 +1,22 @@
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle='collapse' data-target='.navbar-ex1-collapse' type='button'>
+            <div class="icon-bar"></div>
+            <div class="icon-bar"></div>
+            <div class="icon-bar"></div>
+        </button>
+        <a class="navbar-brand" href="#">Bloggr</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+            <li>{{#link-to 'about'}}About{{/link-to}}</li>
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="container">
+    {{outlet}}
+</div>

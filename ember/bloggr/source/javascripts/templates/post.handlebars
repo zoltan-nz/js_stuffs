@@ -1,0 +1,13 @@
+<div class="row">
+    {{#if isEditing}}
+        <div class="col-md-5">
+            {{partial 'post/edit'}}
+        </div>
+        <button class="btn btn-success" {{action 'doneEditing'}}>Done</button>
+    {{else}}
+        <button class="btn btn-warning" {{action 'edit'}}>Edit</button>
+    {{/if}}
+    <div {{bind-attr class="isEditing:col-md-4:nil"}}>
+        {{partial 'post/show'}}
+    </div>
+</div>
