@@ -50,7 +50,6 @@ App.PostsRoute = Ember.Route.extend
     store = @get('store')
     store.findAll('post')
 
-
 App.PostRoute = Ember.Route.extend
   model: (params) ->
     store = @get('store')
@@ -73,9 +72,6 @@ App.PostsController = Em.ArrayController.extend
       })
       newpost.save()
 
-
-
-
 App.PostController = Ember.ObjectController.extend
   isEditing:  false
 
@@ -85,8 +81,6 @@ App.PostController = Ember.ObjectController.extend
 
     doneEditing: ->
       @set 'isEditing', false
-
-
 
 Ember.Handlebars.helper 'format-date', (date) ->
   moment(date).fromNow()
