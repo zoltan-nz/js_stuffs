@@ -2,9 +2,9 @@
   "name": "yo-ember",
   "version": "0.0.0",
   "dependencies": {
-    "ember": "1.0.0",
-    "ember-data-shim": "1.0.0-beta.2",
-    "bootstrap-sass": "~3.0.0"
+    "ember": "~",
+    "ember-data-shim": "~",
+    "bootstrap-sass": "~"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"

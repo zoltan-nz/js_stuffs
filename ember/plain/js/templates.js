@@ -1,20 +1,23 @@
 (function() {
-  var template = Handlebars.template, templates = Ember.TEMPLATES = Ember.TEMPLATES || {};
-templates['application'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, functionType="function";
+  var template = Ember.Handlebars.template, templates = Ember.TEMPLATES = Ember.TEMPLATES || {};
+templates['application'] = template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashContexts, hashTypes, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  buffer += "<h1>Home</h1>\n    <nav>\n    	<ul>\n    			";
+  data.buffer.push("<h1>Home</h1>\n    <nav>\n    	<ul>\n    			");
+  hashContexts = {'tag': depth0};
+  hashTypes = {'tag': "STRING"};
   options = {hash:{
     'tag': ("li")
-  },data:data};
-  buffer += escapeExpression(((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "Home", "index", options) : helperMissing.call(depth0, "link-to", "Home", "index", options)))
-    + "    			\n    		</ul>\n    </nav>\n    ";
-  if (stack2 = helpers.outlet) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.outlet; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2);
+  },contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "Home", "index", options) : helperMissing.call(depth0, "link-to", "Home", "index", options))));
+  data.buffer.push("    			\n    		</ul>\n    </nav>\n    ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   return buffer;
-  });
+  
+});
 })();

@@ -1,0 +1,8 @@
+# Logfile created on 2013-12-31 15:42:54 +0000 by logger.rb/41954
+I, [2013-12-31T15:42:54.968380 #65380]  INFO -- : 0:  rack (1.5.2) from /home/szines/.rvm/gems/ruby-2.0.0-p353/specifications/rack-1.5.2.gemspec
+I, [2013-12-31T15:42:54.968805 #65380]  INFO -- : 0:  bundler (1.5.1) from /home/szines/.rvm/gems/ruby-2.0.0-p353@global/specifications/bundler-1.5.1.gemspec
+I, [2013-12-31T15:46:24.819892 #360]  INFO -- : 0:  rack (1.5.2) from /home/szines/.rvm/gems/ruby-2.0.0-p353/specifications/rack-1.5.2.gemspec
+I, [2013-12-31T15:46:24.820278 #360]  INFO -- : 0:  bundler (1.5.1) from /home/szines/.rvm/gems/ruby-2.0.0-p353@global/specifications/bundler-1.5.1.gemspec
+I, [2013-12-31T16:13:28.034414 #3703]  INFO -- : 0:  rack (1.5.2) from /home/szines/.rvm/gems/ruby-2.0.0-p353/specifications/rack-1.5.2.gemspec
+I, [2013-12-31T16:13:28.034868 #3703]  INFO -- : 0:  puma (2.5.1) from /home/szines/.rvm/gems/ruby-2.0.0-p353/specifications/puma-2.5.1.gemspec
+I, [2013-12-31T16:13:28.036679 #3703]  INFO -- : 0:  bundler (1.5.1) from /home/szines/.rvm/gems/ruby-2.0.0-p353@global/specifications/bundler-1.5.1.gemspec
