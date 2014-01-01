@@ -2,3 +2,4 @@
 access.log
 error.log
 *.sublime*
+bower_components
