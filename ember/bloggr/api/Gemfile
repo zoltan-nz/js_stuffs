@@ -14,7 +14,7 @@ gem 'active_model_serializers'
 
 gem 'forgery'
 
-#Fater and easier json generation
+#Faster and easier json generation
 gem 'rabl'
 gem 'oj'
 
