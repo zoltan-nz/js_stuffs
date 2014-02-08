@@ -1,0 +1,1 @@
+YoEmber.ApplicationAdapter = DS.FixtureAdapter
