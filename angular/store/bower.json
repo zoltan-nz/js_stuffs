@@ -1,0 +1,39 @@
+{
+  "name": "store",
+  "version": "0.1.0",
+  "description": "Yet another amazing AngularJS app",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "https://github.com/mgcrea/store",
+  "bugs": "https://github.com/mgcrea/store/issues",
+  "author": {
+    "name": "Olivier Louvignes",
+    "email": "olivier@mg-crea.com",
+    "url": "https://github.com/mgcrea"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgcrea/store.git"
+  },
+   "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "bootstrap": "^3.0",
+    "font-awesome": "^4.0",
+    "angular-strap": "^2.0",
+    "angular-motion": "^0.3",
+    "bootstrap-additions": "^0.2",
+    "ui-router": "^0.2",
+    "angular-animate": "~1.3.0",
+    "angular-cookies": "~1.3.0",
+    "angular-resource": "~1.3.0",
+    "angular-route": "~1.3.0",
+    "angular-sanitize": "~1.3.0",
+    "angular-touch": "~1.3.0",
+    "angular": "~1.3.0"
+  }
+}
