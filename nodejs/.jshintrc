@@ -30,17 +30,19 @@
     "setTimeout", "clearTimeout", "setInterval", "clearInterval"
   ],
   "esnext": true,
-  "node" : false,
+  "node" : true,
   "browser" : false,
+
+  "indent": 2,
 
   "boss" : true,
   "curly": false,
   "debug": false,
-  "devel": false,
+  "devel": true,
   "eqeqeq": true,
   "evil": true,
   "forin": false,
-  "immed": false,
+  "immed": true,
   "laxbreak": false,
   "newcap": true,
   "noarg": true,

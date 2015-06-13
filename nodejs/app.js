@@ -1,12 +1,14 @@
-import request from 'request';
-import url from 'url';
+import express from 'express';
 
 var app = express();
 
+app.get('/', function(req, res) { res.send('Hello World!'); });
+
 app.get('/hello/:nickname', function(req, response) {
-    "use strict";
 
     var nickname = req.params.nickname;
 
-    response.write(`Hello ${nickname}`);
-})
+    response.send(`Hello ${nickname}`);
+});
+
+app.listen(5200);
